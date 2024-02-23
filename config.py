@@ -23,3 +23,7 @@ CONFIG_COL = [
     [ "Xmas ABC",           "Xmas ABC.csv",             10 ],
     [ "Zkalien",            "Zkalien + Genesis.csv",    10 ],
 ]
+
+BAN_WALLETS = [
+    "0x000000000000000000000000000000000000dEaD",
+]
