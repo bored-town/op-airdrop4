@@ -20,10 +20,11 @@ CONFIG_COL = [
     [ "Robonaut",           "Robonaut.csv",             1 ],
     [ "RoboSkull",          "RoboSkull.csv",            1 ],
     [ "The Vintract",       "The Vintract.csv",         1 ],
-    #[ "Xmas ABC",           "Xmas ABC.csv",             10 ],
     [ "Zkalien",            "Zkalien + Genesis.csv",    10 ],
 ]
 
 BAN_WALLETS = [
     "0x000000000000000000000000000000000000dEaD",
+    "0x6fF5723435b7dfC2371B57Fb5cB4c373E5995C78", # bored town #1
+    "0x9D63038e7f74bc089eb38e61Be8Da937918900D6", # bored town #2
 ]
