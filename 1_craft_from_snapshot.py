@@ -34,10 +34,10 @@ for (addr, info) in chunk.items():
 output = []
 for (addr, info) in chunk.items():
     body = [ addr ]
+    body.append(info['op'])
+    body.append(info['sum'])
     for (title, _, _) in CONFIG_COL:
         body.append(info.get(title) or 0)
-    body.append(info['sum'])
-    body.append(info['op'])
     output.append(body)
 
 # sort by points
@@ -45,7 +45,7 @@ output = sorted(output, key=lambda x: -x[-1])
 
 # print output (header)
 fields = ','.join([ title for (title, _, _) in CONFIG_COL ])
-print("address,{},points,OP".format(fields))
+print("address,OP,sum,{}".format(fields))
 
 # print output (body)
 for row in output:
