@@ -1,5 +1,6 @@
 REWARD_OP    = 6_000
 DIR_SNAPSHOT = "./snapshot"
+GALXE_ADDRS  = "./snapshot/Droptimism.csv"
 
 CONFIG_COL = [
     [ "Alpha Gal",          "Alpha Gal.csv",            1 ],

@@ -43,6 +43,10 @@ for (target, srcs) in MIGRATE_WALLETS.items():
             chunk[target][col_name] = points
         del chunk[src]
 
+# 3.2) filter only galxe addresses only
+galxe = [ line.strip().split(',')[0].lower() for line in open(GALXE_ADDRS, 'r') ]
+chunk = { key: value for key, value in chunk.items() if key in galxe }
+
 # 4) sum points
 total_points = 0
 for (addr, info) in chunk.items():
@@ -77,7 +81,7 @@ print("#,Address,OP,Points,{}".format(fields))
 
 # 10) print output (body)
 for c in chunk:
-    op = 'TBA' #math.floor(c['op'] * 1_000) / 1_000 # floor 3 digits
+    op = math.floor(c['op'] * 1_000) / 1_000 # floor 3 digits
     fields = ','.join([ str(c.get(title) or 0) for (title, _, _) in CONFIG_COL ])
     print('{},{},{},{},{}'.format(
         c['no'],        # no
