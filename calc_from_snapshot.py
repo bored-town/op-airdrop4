@@ -36,13 +36,12 @@ for (target, srcs) in MIGRATE_WALLETS.items():
     target = target.lower()
     for src in srcs:
         src = src.lower()
-        old = chunk.get(src)
-        if old is not None:
-            for (col_name, points) in old.items():
-                if chunk.get(target) is None:
-                    chunk[target] = {}
-                chunk[target][col_name] = points
-            del chunk[src]
+        old = chunk[src]
+        for (col_name, points) in old.items():
+            if chunk.get(target) is None:
+                chunk[target] = {}
+            chunk[target][col_name] = points
+        del chunk[src]
 
 # 4) sum points
 total_points = 0
